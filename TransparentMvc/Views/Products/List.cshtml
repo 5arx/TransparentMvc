@@ -1,0 +1,17 @@
+﻿@using TransparentMvcLib.Classes
+@model IEnumerable<Product>
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+<table class="table table-bordered table-hover" >
+    @foreach (var p in Model)
+    {
+        <tr>
+            <td>@Html.ActionLink(@p.Name, "Details", new { id = @p.Id }, new { title="View details of " + @p.Name }) </td>
+            <td><em>@p.Description</em></td>
+            
+        </tr>
+    }
+</table>
